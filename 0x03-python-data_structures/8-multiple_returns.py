@@ -8,4 +8,4 @@ def multiple_returns(sentence):
     else:
         length = len(sentence)
         first_char = sentence[0]
-    return ("Length: {} - First character: {}".format(length, first_char))
+        return tuple([length, first_char])
