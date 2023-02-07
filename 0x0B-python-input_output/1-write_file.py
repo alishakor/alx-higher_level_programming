@@ -5,10 +5,10 @@
 
 def write_file(filename="", text=""):
     """a function that writes a string to a text file (UTF8)
-    and prints it to stdout
+    and returns the number of characters written
 
     Args:
-        filename: The file to be read
+        filename: The textfile to be written to
         text: contents to write
 
     """
