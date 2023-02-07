@@ -4,7 +4,7 @@
 
 
 import json
-"""A module that take Python data hierarchies, and convert 
+"""A module that take Python data hierarchies, and convert
 them to string representations"""
 
 
