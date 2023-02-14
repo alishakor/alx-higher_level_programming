@@ -37,8 +37,7 @@ class Base:
         """
         if list_dictionaries is None or list_dictionaries == []:
             return ("[]")
-        else:
-            return (json.dumps(list_dictionaries))
+        return (json.dumps(list_dictionaries))
 
     @classmethod
     def save_to_file(cls, list_objs):
@@ -77,7 +76,7 @@ class Base:
             **dictionary: double pointer to a dictionary
         """
         if dictonary and dictionary != {}:
-            if cls.__name__() = "Rectangle":
+            if cls.__name__ = "Rectangle":
                 ret = cls(1, 1)
             else:
                 ret cls(1)

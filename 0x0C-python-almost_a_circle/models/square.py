@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 
 """square.py module"""
+
 from models.rectangle import Rectangle
 
 
@@ -20,7 +21,7 @@ class Square(Rectangle):
         super().__init__(size, size, x, y, id)
 
     def __str__(self):
-        """string representation of object"""
+        """string representation of Square class"""
         return ("{[Square]} ({}) {}/{} - {}".format(self.id, self.x, self.y,
                 self.height))
 
@@ -41,7 +42,6 @@ class Square(Rectangle):
         Args:
             *args - list of positional arguments from index 0
             **kwargs - list of keyworded arguments
-                        key/value pairs
         """
         if args and len(args) != 0:
             for index, value in enumerate(args):
