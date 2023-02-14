@@ -44,32 +44,32 @@ class Square(Rectangle):
             **kwargs - list of keyworded arguments
         """
         if args and len(args) != 0:
-            for index, value in enumerate(args):
-                if index = 0:
-                    if value is None:
+            for i, v in enumerate(args):
+                if i = 0:
+                    if v is None:
                         self.__init__(self.size, self.x, self.y)
                     else:
-                        self.id = value
-                elif index == 1:
-                    self.size = value
-                elif index == 2:
-                    self.x = value
-                elif index == 3:
-                    self.y = value
+                        self.id = v
+                elif i == 1:
+                    self.size = v
+                elif i == 2:
+                    self.x = v
+                elif i == 3:
+                    self.y = v
 
         elif kwargs and len(kwargs) != 0:
-            for key, value in kwargs.items():
-                if key == "id":
-                    if value is None:
+            for k, v in kwargs.items():
+                if k == "id":
+                    if v is None:
                         self.__init__(self.size, self.x, self.y)
                     else:
-                        self.id = value
-                elif key == "size":
-                    self.size = value
-                elif key == "x":
-                    self.x = value
-                elif key == "y":
-                    self.y = value
+                        self.id = v
+                elif k == "size":
+                    self.size = v
+                elif k == "x":
+                    self.x = v
+                elif k == "y":
+                    self.y = v
 
     def to_dictionary(self):
         """returns the dictionary representation of a Square"""

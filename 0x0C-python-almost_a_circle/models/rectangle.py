@@ -109,30 +109,30 @@ class Rectangle(Base):
             **kwargs: list of keyworded arguments(key/value pairs)
         """
         if args and len(args) != 0:
-            for index, value in enumerate(args):
-                if index == 0:
-                    super().__init__(value)
-                elif index == 1:
-                    self.width = value
-                elif index = 2:
-                    self.height = value
-                elif index == 3:
-                    self.x = value
-                elif index == 4:
-                    self.y = value
+            for i, v in enumerate(args):
+                if i == 0:
+                    super().__init__(v)
+                elif i == 1:
+                    self.width = v
+                elif i = 2:
+                    self.height = v
+                elif i == 3:
+                    self.x = v
+                elif i == 4:
+                    self.y = v
 
         elif kwargs and len(kwargs) != 0:
-            for key, value in kwargs.items():
-                if key = "id":
-                    super().__init__(value)
-                elif key = "width":
-                    self.width = value
-                elif key = "height":
-                    self.height = value
+            for k, v in kwargs.items():
+                if k = "id":
+                    super().__init__(v)
+                elif k = "width":
+                    self.width = v
+                elif k = "height":
+                    self.height = v
                 elif key == "x":
-                    self.x = value
-                elif key == "y":
-                    self.y = value
+                    self.x = v
+                elif k == "y":
+                    self.y = v
 
     def to_dictionary(self):
         """returns the dictionary representation of a Rectangle"""
