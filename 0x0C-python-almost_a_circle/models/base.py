@@ -15,10 +15,8 @@ class Base:
         """initializing the base class constructor
 
         Args:
-            id(int): None
-
+            id: None
         """
-
         if id is not None:
             self.id = id
         else:
@@ -49,7 +47,7 @@ class Base:
 
         """
         filename = "{}.json".format(cls.__name__)
-        with (open(filename, 'w', encoding="utf-8")) as f:
+        with (open(filename, "w", encoding="utf-8")) as f:
             if list_objs is None or list_objs == []:
                 f.write("[]")
             else:
@@ -76,10 +74,10 @@ class Base:
             **dictionary: double pointer to a dictionary
         """
         if dictonary and dictionary != {}:
-            if cls.__name__ = "Rectangle":
+            if cls.__name__ == "Rectangle":
                 ret = cls(1, 1)
             else:
-                ret cls(1)
+                ret = cls(1)
             ret.update(**dictionary)
             return (ret)
 
