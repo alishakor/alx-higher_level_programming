@@ -50,7 +50,7 @@ class Base:
 
         """
         filename = "{}.json".format(cls.__name__)
-        with open((filename, 'w', encoding = 'utf-8')) as f:
+        with (open(filename, 'w', encoding="utf-8")) as f:
             if list_objs is None or list_objs == []:
                 f.write("[]")
             else:
@@ -93,7 +93,7 @@ class Base:
                 list_dicts = Base.from_json_string(f.read())
                 return [cls.create(**d) for d in list_dicts]
         except FileNotFoundError:
-            return([])
+            return ([])
 
     @classmethod
     def save_to_file_csv(cls, list_objs):

@@ -1,14 +1,11 @@
 #!/usr/bin/python3
 
 """square.py module"""
-
-
 from models.rectangle import Rectangle
 
 
 class Square(Rectangle):
     """a Square class that inherits from Rectangle"""
-
 
     def __init__(self, size, x=0, y=0, id=None):
         """initializing the square class constructor
@@ -23,8 +20,9 @@ class Square(Rectangle):
         super().__init__(size, size, x, y, id)
 
     def __str__(self):
-        return "{[Square]} ({}) {}/{} - {}".format(self.id, self.x, self.y,
-            self.height)
+        """string representation of object"""
+        return ("{[Square]} ({}) {}/{} - {}".format(self.id, self.x, self.y,
+                self.height))
 
     @property
     def size(self):
@@ -32,12 +30,12 @@ class Square(Rectangle):
         return (self.width)
 
     @size.getters
-    def size(self,value):
+    def size(self, value):
         """Sets the value of the width and height with same value"""
         self.width = value
         self.height = value
 
-    def update(self, *args, **kwargs)
+    def update(self, *args, **kwargs):
         """Assigns an argument to each attributes
 
         Args:
