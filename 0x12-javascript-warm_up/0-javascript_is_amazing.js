@@ -2,5 +2,5 @@
 
 // script that print console.log
 
-const myvar = 'JavScript is amazing';
+const myvar = 'JavaScript is amazing';
 console.log(myvar);
