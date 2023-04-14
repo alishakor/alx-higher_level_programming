@@ -17,6 +17,5 @@ const arg2 = Number(process.argv[3]);
 if (arg1 && arg2) {
   console.log(add(arg1, arg2));
 } else if (isNaN) {
-    console.log('NaN');
+  console.log('NaN');
 }
-

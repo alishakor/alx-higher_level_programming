@@ -12,9 +12,8 @@ const args = process.argv.slice(2);
 if (args.length <= 1) {
   console.log('0');
 } else {
-  const args_array = args.map(Number);
-  args_array.sort(function (a, b) {return b - a;});
-  const SecondBigNumb = args_array[1];
+  const ArgsArray = args.map(Number);
+  ArgsArray.sort(function (a, b) { return b - a; });
+  const SecondBigNumb = ArgsArray[1];
   console.log(SecondBigNumb);
 }
-
