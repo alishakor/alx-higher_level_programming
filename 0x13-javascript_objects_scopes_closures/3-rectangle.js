@@ -17,14 +17,9 @@ class Rectangle {
   }
 
   print () {
-    for (let j = 0; j < this.height; k++) {
-      let result = '';
-      for (let k = 0; k < this.width; k++) {
-        result += 'X';
-      }
-      console.log(result);
+    for (let j = 0; j < this.height; j++) {
+      console.log('X'.repeat(this.width));
     }
   }
 }
-
 module.exports = Rectangle;
