@@ -1,7 +1,8 @@
 #!/usr/bin/python3
 
 """
-a script that lists all State object from the database hbtn_0e_0_usa
+a  script that adds the State object “Louisiana” to the
+database hbtn_0e_6_usa
 """
 
 import sys
@@ -14,7 +15,7 @@ if __name__ == "__main__":
     """
     Create a new database engine
     """
-    engine = create_engine("mysql+mysqldb://{}:{}@localhost:3306/{}"
+    engine = create_engine('mysql+mysqldb://{}:{}@localhost:3306/{}'
                            .format(sys.argv[1], sys.argv[2], sys.argv[3]))
     """
     Create all tables defined in the models
@@ -22,15 +23,18 @@ if __name__ == "__main__":
     Base.metadata.create_all(engine)
 
     """
-    Create a new sesson to interact with database engine
+    Create a new session to interact with engine
     """
     Session = sessionmaker(bind=engine)
     session = Session()
     """
-    Write the query to be executed
+    create new state Louisiana and add state object  to the session
     """
-    for state in session.query(State).order_by(State.id):
-        print("{}: {}".format(state.id, state.name))
+    new_state = State(name="Louisiana")
+
+    session.add(new_state)
+    session.commit()
+    print(f"{new_state.id}")
     """
     close the session
     """
