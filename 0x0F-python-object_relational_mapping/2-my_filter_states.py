@@ -25,7 +25,7 @@ if __name__ == "__main__":
     Execute an SQL query to retrieve data
     """
     cursor_obj.execute(
-            "SELECT * FROM states WHERE name = '{}' \
+            "SELECT * FROM states WHERE name LIKE BINARY '{}' \
             ORDER BY states.id ASC".format(sys.argv[4]))
     """
     Fetch all the rows returned by the query and
