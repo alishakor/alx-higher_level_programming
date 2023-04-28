@@ -12,7 +12,7 @@ import sys
 import urllib.request
 
 
-if _name_ == "_main_":
+if __name__ == "__main__":
     url = sys.argv[1]
     with urllib.request.urlopen(url) as feedback:
         headers = feedback.info()
