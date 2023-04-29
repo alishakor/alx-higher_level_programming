@@ -16,7 +16,7 @@ import requests
 import sys
 
 
-if _name_ == "_main_":
+if __name__ == "__main__":
     if len(sys.argv) != 3:
         print("Usage: ./github_id.py <username> <password>")
         sys.exit(1)
