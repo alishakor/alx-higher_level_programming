@@ -18,7 +18,7 @@ import requests
 import sys
 
 
-if _name_ == "_main_":
+if __name__ == "__main__":
     q = sys.argv[1] if len(sys.argv) > 1 else ""
     url = 'http://0.0.0.0:5000/search_user'
     info = {'q': q}
@@ -35,4 +35,4 @@ if _name_ == "_main_":
             print("No result")
 
     except ValueError:
-        print("Not a valid JSON")
+        print("Not a valid JSON")
