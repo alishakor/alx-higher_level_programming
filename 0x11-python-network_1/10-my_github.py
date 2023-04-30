@@ -18,13 +18,17 @@ import sys
 
 if __name__ == "__main__":
     if len(sys.argv) != 3:
-        print("Usage: ./github_id.py <username> <password>")
+        print("Usage: ./file.py <username> <password>")
         sys.exit(1)
 
     username = sys.argv[1]
     password = sys.argv[2]
-    url = 'https://api.github.com/user'
-    authorization = (username, password)
+    url = f"https://api.github.com/users/{username}"
+    auth = (username, password)
 
-    response = requests.get(url, authorization=authorization)
-    print(response.json().get("id"))
+    response = requests.get(url, auth=auth)
+    if response.status_code == 200:
+        user_info = response.json()
+        print(user_info.get("id"))
+    else:
+        print("None")
