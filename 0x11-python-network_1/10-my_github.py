@@ -29,6 +29,6 @@ if __name__ == "__main__":
     response = requests.get(url, auth=auth)
     if response.status_code == 200:
         user_info = response.json()
-        print(user_info.get("id"))
+        print(f"{user_info.get('id')})
     else:
         print("None")
