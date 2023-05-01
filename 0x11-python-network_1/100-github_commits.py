@@ -13,9 +13,17 @@ You don’t need to check arguments passed to the script
 
 import sys
 import requests
+repo = sys.argv[1]
+owner = sys.argv[2]
 
-if _name_ == "_main_":
-    url = f"https://api.github.com/repos/{sys.argv[2]}/{sys.argv[1]}/commits"
-    r = requests.get(url)
-    for commit in r.json()[:10]:
-        print(f"{commit['sha']}: {commit['commit']['author']['name']}")
+if __name__ == "__main__":
+    url = f"https://api.github.com/repos/{owner}/{repo}/commits?per_page=10"
+    response = requests.get(url)
+    if response.status_code == 200:
+        commits = response.json()
+        for commit in commits:
+            unique_id = commit.get('sha')
+            auth = commit.get('commit').get('author').get('name')
+            print(f"{unique_id}: {auth}")
+    else:
+        print(f"{response.status_code}")
