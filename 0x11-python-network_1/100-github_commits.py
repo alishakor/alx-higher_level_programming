@@ -13,10 +13,10 @@ You don’t need to check arguments passed to the script
 
 import sys
 import requests
-repo = sys.argv[1]
-owner = sys.argv[2]
 
 if __name__ == "__main__":
+    repo = sys.argv[1]
+    owner = sys.argv[2]
     url = f"https://api.github.com/repos/{owner}/{repo}/commits?per_page=10"
     response = requests.get(url)
     if response.status_code == 200:
