@@ -1,16 +1,17 @@
 #!/usr/bin/node
-// Write a script that i if a fil.
+// Write a script that writes a string to a file.
 // The first argument is the file path
-// The content of the file must be read in utf-8
-// If an error occurred during the reading, print the error object
+// The second argument is the string to write
+// The content of the file must be written in utf-8
+// If an error occurred during while writing, print the error object
+
 const fs = require('fs');
 
-const arg = process.argv[2];
+const filePath = process.argv[2];
+const string = process.argv[3];
 
-fs.readFile(arg, 'utf8', (error, content) => {
+fs.writeFile(filePath, string, (error) => {
   if (error) {
     console.error(error);
-  } else {
-      console.log(content);
   }
 });
