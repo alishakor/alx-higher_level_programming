@@ -5,7 +5,8 @@
 // You must use the Star wars API
 // You must use the module request
 const request = require('request');
-const url = 'https://swapi-api.hbtn.io/api/films/' + process.argv[2];
+const movieId = process.argv[2];
+const url = `https://swapi-api.hbtn.io/api/films/${movieId}`;
 
 request(url, function (error, response, body) {
   if (!error) {
@@ -21,6 +22,6 @@ function printCharacters (characters, index) {
       if (index + 1 < characters.length) {
         printCharacters(characters, index + 1);
       }
-   }
+    }
   });
 }
