@@ -14,15 +14,13 @@ const url = process.argv[2];
 const file = process.argv[3];
 
 // Make a GET request to teh URL and store the response object
-request(url, (error, response, body) => {
+request(`${url}`, (error, response, body) => {
   if (error) {
     console.error(error);
   } else {
-    fs.writeFile(file, body, 'utf-8', (error) => {
+    fs.writeFile(`${file}`, body, 'utf-8', (error) => {
       if (error) {
         console.error(error);
-      } else {
-        console.log(`${file}`);
       }
     });
   }
