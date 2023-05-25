@@ -5,7 +5,7 @@
 // The file must be UTF-8 encoded
 // You must use the module request
 
-//Import the request and fs modules
+// Import the request and fs modules
 const request = require('request');
 const fs = require('fs');
 
@@ -19,11 +19,11 @@ request(url, (error, response, body) => {
     console.error(error);
   } else {
     fs.writeFile(file, body, 'utf-8', (error) => {
-     if (error) {
-       console.error(error);
-     } else {
-       console.log(`${file}`);
-       }
-     });
-   }
- });
+      if (error) {
+        console.error(error);
+      } else {
+        console.log(`${file}`);
+      }
+    });
+  }
+});
